@@ -1,0 +1,18 @@
+# Godot
+game/.godot/
+game/*.translation
+game/export_presets.cfg
+game/.import/
+/android/
+
+# Projekt-Tooling
+.checks/
+.env
+.aider*
+!.aider.model.settings.yml
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

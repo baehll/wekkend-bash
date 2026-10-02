@@ -1,0 +1,11 @@
+# Einheitliche Zeilenenden (wichtig auf Windows: Shell-Skripte brechen mit CRLF)
+* text=auto eol=lf
+*.sh text eol=lf
+*.gd text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+*.godot text eol=lf
+*.import text eol=lf
+*.png binary
+*.ogg binary
+*.wav binary

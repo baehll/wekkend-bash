@@ -1,0 +1,22 @@
+# Modell-Einstellungen für aider (Namen müssen exakt zu AIDER_MODEL passen).
+# Wichtig: num_ctx explizit setzen, sonst nutzt Ollama einen kleinen Default-Kontext.
+
+- name: ollama_chat/devstral-small-2-24b-instruct-2512-q3_k_l:latest
+  edit_format: diff
+  extra_params:
+    num_ctx: 32768
+    temperature: 0.2
+
+- name: ollama_chat/qwen3.8-27b-q4_k_m:latest
+  edit_format: diff
+  extra_params:
+    num_ctx: 32768
+    temperature: 0.3
+
+# Lokales 3070-Modell: Namen eintragen und AIDER_MODEL in .env setzen.
+# Kleiner Kontext, 'whole' ist für kleine Dateien bei schwächeren Modellen oft zuverlässiger.
+# - name: ollama_chat/<lokales-modell>:latest
+#   edit_format: whole
+#   extra_params:
+#     num_ctx: 12288
+#     temperature: 0.2
