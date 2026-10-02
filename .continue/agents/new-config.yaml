@@ -1,0 +1,33 @@
+# This is an example configuration file
+# To learn more, see the full config.yaml reference: https://docs.continue.dev/reference
+
+name: Remote Ollama Config
+version: 1.0.0
+schema: v1
+
+models:
+  - name: devstral-small-2-24b
+    provider: ollama
+    model: devstral-small-2-24b-instruct-2512-q3_k_l:latest
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
+    roles:
+      - autocomplete
+      - chat
+      - edit
+      - apply
+  - name: deepseek-r1-distill-qwen-14b
+    provider: ollama
+    model: deepseek-r1-distill-qwen-14b-q4_k_m:latest
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
+    roles:
+      - apply
+      - chat
+      - edit
+  - name: qwen3.8-27b
+    provider: ollama
+    model: qwen3.8-27b-q4_k_m:latest
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
+    roles:
+      - apply
+      - chat
+      - edit
