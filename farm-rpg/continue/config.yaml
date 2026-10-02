@@ -1,0 +1,76 @@
+# Continue-Konfiguration für den Dev-Server (Ollama)
+# Installation: Datei nach ~/.continue/config.yaml kopieren (Windows: %USERPROFILE%\.continue\config.yaml).
+# URL durch den Host des Dev-Servers ersetzen. Das Projekt-Repo liefert zusätzlich
+# .continue/rules und .continue/prompts (werden automatisch aus dem Workspace geladen).
+
+name: Farm RPG - Remote Ollama
+version: 1.0.0
+schema: v1
+
+models:
+  # Coder: Chat, Edit, Apply und (wie im Beispiel) Autocomplete
+  - name: Devstral Small 2 24B (Coder)
+    provider: ollama
+    model: devstral-small-2-24b-instruct-2512-q3_k_l:latest
+    apiBase: http://URL:11434
+    roles:
+      - autocomplete
+      - chat
+      - edit
+      - apply
+    capabilities:
+      - tool_use
+    defaultCompletionOptions:
+      contextLength: 32768
+      temperature: 0.2
+
+  # Planer/Reviewer: großes Thinking-Modell mit Tools
+  - name: Qwen3.8 27B (Planer)
+    provider: ollama
+    model: qwen3.8-27b-q4_k_m:latest
+    apiBase: http://URL:11434
+    roles:
+      - chat
+      - summarize
+    capabilities:
+      - tool_use
+    defaultCompletionOptions:
+      contextLength: 32768
+      temperature: 0.4
+
+  # Zweitmeinung/Debugging-Denker: bewusst nur Chat, ohne Tools (R1-Distill ist bei Tool-Calls unzuverlässig)
+  - name: DeepSeek R1 Distill 14B (Reasoning)
+    provider: ollama
+    model: deepseek-r1-distill-qwen-14b-q4_k_m
+    apiBase: http://URL:11434
+    roles:
+      - chat
+    defaultCompletionOptions:
+      contextLength: 16384
+      temperature: 0.6
+
+  # Agent-Basis: kleines, schnelles Tool-Use-Modell mit 12 Reasoning- und 12 Instruct-Modi.
+  # Modi werden per Tag am Anfang der Nachricht geschaltet, siehe docs/AGENT_ROLES.md
+  # und die Prompts unter .continue/prompts (Aufruf mit /).
+  # Nicht zum Programmieren gedacht (laut Modellkarte), dafür Orchestrierung/Tool-Use/Extraktion.
+  - name: LFM2.5 2.6B Turbo-Brilliance (Agent-Basis, Q8)
+    provider: ollama
+    model: hf.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF:Q8_0
+    apiBase: http://URL:11434
+    roles:
+      - chat
+      - summarize
+    capabilities:
+      - tool_use
+    defaultCompletionOptions:
+      contextLength: 32768
+      temperature: 0.1
+      topP: 0.95
+
+context:
+  - provider: file
+  - provider: code
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder

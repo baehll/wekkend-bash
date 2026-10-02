@@ -59,6 +59,8 @@ Logs liegen in `.checks/`. Bei FAIL zuerst das passende Log lesen, dann gezielt 
 | M | Coder auf Dev-Server (Devstral) | Szene + Script, Integration |
 | L | Planer (Qwen 27B) | **Nie direkt ausführen.** Zuerst in S/M-Tasks zerlegen |
 
+**Orchestrierung, Tool-Use, Extraktion, Zusammenfassungen:** LFM2.5 2.6B Turbo-Brilliance (nicht zum Programmieren). Modi und Rollen: `docs/AGENT_ROLES.md`.
+
 Zweimal gescheitert → eskalieren (größeres Modell oder Re-Planung). Nie dasselbe Modell mit identischem Prompt zum dritten Mal.
 
 ## 8. Antwortformat

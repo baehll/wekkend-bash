@@ -43,3 +43,9 @@ Modellwechsel: `AGENT_OLLAMA_URL` und `AGENT_MODEL` in `.env` (siehe `.env.examp
 ## Hinweise
 - Godot-Version: `GODOT_VERSION` in `.env` und `config/features` in `game/project.godot` anpassen (voreingestellt 4.3).
 - Die Dateien in diesem Setup wurden ohne laufendes Docker/Godot erstellt. Erster Lauf: `docker compose build agent` und `tools/run_checks.sh` prüfen.
+
+## Continue einrichten
+1. `continue/config.yaml` nach `~/.continue/config.yaml` kopieren (Windows: `%USERPROFILE%\.continue\config.yaml`) und `URL` durch den Dev-Server ersetzen.
+2. Die Ordner `.continue/rules` und `.continue/prompts` dieses Repos lädt Continue automatisch aus dem Workspace.
+3. LFM-Modell holen und prüfen, siehe `docs/AGENT_ROLES.md`, Abschnitt 4. Optional: `ollama/lfm-agent.Modelfile` mit `ollama create` einspielen.
+4. In der Chat-Eingabe `/` tippen: dort liegen die 12 Rollen (Architekt, Task-Zerleger, Debugger, ...).

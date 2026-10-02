@@ -1,0 +1,10 @@
+# Optional: Modellkarten-Parameter fest einbauen (auf dem Dev-Server ausführen):
+#   ollama create lfm-agent -f lfm-agent.Modelfile
+# Danach in Continue/Open WebUI "lfm-agent:latest" statt des hf.co-Namens verwenden.
+FROM hf.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF:Q8_0
+PARAMETER num_ctx 32768
+PARAMETER temperature 0.1
+PARAMETER top_k 64
+PARAMETER top_p 0.95
+PARAMETER min_p 0.05
+PARAMETER repeat_penalty 1.05
