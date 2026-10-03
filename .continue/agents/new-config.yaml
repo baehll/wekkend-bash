@@ -11,6 +11,14 @@ models:
     model: devstral-small-2-24b-instruct-2512-q3_k_l:latest
     apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
     roles:
+      - chat
+      - edit
+      - apply
+  - name: lfm2.5-2.6b-q3.8
+    provider: ollama
+    model: lfm2.5-2.6b-q3.8-tbrilliance-neo-max-q8_0:latest
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
+    roles:
       - autocomplete
       - chat
       - edit

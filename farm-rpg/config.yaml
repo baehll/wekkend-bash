@@ -12,7 +12,7 @@ models:
   - name: Devstral Small 2 24B (Coder)
     provider: ollama
     model: devstral-small-2-24b-instruct-2512-q3_k_l:latest
-    apiBase: http://URL:11434
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
     roles:
       - autocomplete
       - chat
@@ -28,7 +28,7 @@ models:
   - name: Qwen3.8 27B (Planer)
     provider: ollama
     model: qwen3.8-27b-q4_k_m:latest
-    apiBase: http://URL:11434
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
     roles:
       - chat
       - summarize
@@ -42,7 +42,7 @@ models:
   - name: DeepSeek R1 Distill 14B (Reasoning)
     provider: ollama
     model: deepseek-r1-distill-qwen-14b-q4_k_m
-    apiBase: http://URL:11434
+    apiBase: http://rhach-saw.tail5a1b2b.ts.net:11434
     roles:
       - chat
     defaultCompletionOptions:
@@ -56,7 +56,7 @@ models:
   - name: LFM2.5 2.6B Turbo-Brilliance (Agent-Basis, Q8)
     provider: ollama
     model: hf.co/DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF:Q8_0
-    apiBase: http://URL:11434
+    apiBase: http://host.docker.internal:11434
     roles:
       - chat
       - summarize

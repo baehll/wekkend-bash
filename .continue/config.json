@@ -7,6 +7,12 @@
       "apiBase": "http://rhach-saw.tail5a1b2b.ts.net:11434" 
     },
     {
+      "title": "lfm2.5-2.6b-q3.8",
+      "provider": "ollama",
+      "model": "lfm2.5-2.6b-q3.8-tbrilliance-neo-max-q8_0:latest", 
+      "apiBase": "http://rhach-saw.tail5a1b2b.ts.net:11434" 
+    },
+    {
       "title": "deepseek-r1-distill-qwen-14b",
       "provider": "ollama",
       "model": "deepseek-r1-distill-qwen-14b-q4_k_m:latest", 

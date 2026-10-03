@@ -1,0 +1,7 @@
+# automatisch von dev-server.sh erzeugt (wird bei jedem Start ueberschrieben)
+services:
+  open-webui:
+    environment:
+      OLLAMA_BASE_URLS: "http://host.docker.internal:11434"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
